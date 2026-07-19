@@ -1,4 +1,6 @@
 const { createServer } = require('http');
+const fs = require("fs");
+const validateUserInput = require("./validation");
 
 const server = createServer((req, res) => {
 
@@ -13,13 +15,40 @@ const server = createServer((req, res) => {
         req.on("end", () => {
             try {
                 const userData = JSON.parse(body);
+                const users = JSON.parse(fs.readFileSync("users.json", "utf8"));
 
-                res.writeHead(200, {
+                const validationResult = validateUserInput(userData, users);
+
+                if (!validationResult.success) {
+                    res.writeHead(400, {
+                        "Content-Type": "application/json"
+                    });
+                    res.end(JSON.stringify({
+                        message: validationResult.error
+                    }));
+                    return;
+                }
+
+                const newUser = {
+                    id: users.length + 1,
+                    ...userData,
+                    createdAt: new Date().toISOString()
+                };
+                
+                users.push(newUser);
+                
+                fs.writeFileSync(
+                    "users.json",
+                    JSON.stringify(users, null, 2)
+                );
+                
+                res.writeHead(201, {
                     "Content-Type": "application/json"
                 });
+                
                 res.end(JSON.stringify({
-                    message: "Data received successfully",
-                    data: userData
+                    message: "User created successfully",
+                    user: newUser
                 }));
 
             } catch (error) {
