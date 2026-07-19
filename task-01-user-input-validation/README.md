@@ -1,50 +1,38 @@
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Input Validation</title>
-</head>
-<body>
+# User Input Validation
 
-    <h1>User Input Validation</h1>
+A simple Node.js task that validates user input, prevents duplicate email and phone number, and stores valid users in a local JSON file.
 
-    <p>
-        A simple Node.js task that validates user input, prevents duplicate email and phone number,
-        and stores valid users in a local JSON file.
-    </p>
+## User Fields
 
-    <h2>User Fields</h2>
-    <ul>
-        <li>id</li>
-        <li>name</li>
-        <li>email</li>
-        <li>phoneNumber</li>
-        <li>createdAt</li>
-    </ul>
+- id
+- name
+- email
+- phoneNumber
+- createdAt
 
-    <h2>Validation Rules</h2>
-    <ul>
-        <li>All fields are required.</li>
-        <li>Email must be unique.</li>
-        <li>Phone number must be unique.</li>
-    </ul>
+## Validation Rules
 
-    <h2>Examples</h2>
+- All fields are required.
+- Email must be unique.
+- Phone number must be unique.
 
-    <h3>Valid Request</h3>
-    <strong>Input</strong>
-    <pre>
+## Examples
+
+### Valid Request
+
+**Input**
+
+```json
 {
   "name": "Mohammed",
   "email": "mohammed@example.com",
   "phoneNumber": "0591234567"
 }
-    </pre>
+```
 
-    <strong>Response</strong>
-    <pre>
+**Response**
+
+```json
 {
   "message": "User created successfully.",
   "user": {
@@ -55,72 +43,76 @@
     "createdAt": "2026-07-19T12:00:00.000Z"
   }
 }
-    </pre>
+```
 
-    <hr>
+---
 
-    <h3>Duplicate Email</h3>
-    <strong>Input</strong>
-    <pre>
+### Duplicate Email
+
+**Input**
+
+```json
 {
   "name": "Rafat",
   "email": "mohammed@example.com",
   "phoneNumber": "0569876543"
 }
-    </pre>
+```
 
-    <strong>Response</strong>
-    <pre>
+**Response**
+
+```json
 {
   "message": "Email already exists."
 }
-    </pre>
+```
 
-    <hr>
+---
 
-    <h3>Duplicate Phone Number</h3>
-    <strong>Input</strong>
-    <pre>
+### Duplicate Phone Number
+
+**Input**
+
+```json
 {
   "name": "Ahmad",
   "email": "ahmad@example.com",
   "phoneNumber": "0591234567"
 }
-    </pre>
+```
 
-    <strong>Response</strong>
-    <pre>
+**Response**
+
+```json
 {
   "message": "Phone number already exists."
 }
-    </pre>
+```
 
-    <hr>
+---
 
-    <h3>Missing Required Field</h3>
-    <strong>Input</strong>
-    <pre>
+### Missing Required Field
+
+**Input**
+
+```json
 {
   "name": "Yousef",
   "email": "",
   "phoneNumber": "0564567890"
 }
-    </pre>
+```
 
-    <strong>Response</strong>
-    <pre>
+**Response**
+
+```json
 {
   "message": "All fields are required."
 }
-    </pre>
-
-    <h2>Technologies</h2>
-    <ul>
-        <li>Node.js</li>
-        <li>HTTP Module</li>
-        <li>File System (fs)</li>
-    </ul>
-
-</body>
-</html>
 ```
+
+## Technologies
+
+- Node.js
+- HTTP Module
+- File System (`fs`)
