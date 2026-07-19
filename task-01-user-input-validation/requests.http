@@ -1,0 +1,96 @@
+###
+POST http://localhost:3000
+Content-Type: application/json
+
+{
+  "name": "Mohammed",
+  "email": "mohammed@gmail.com",
+  "phoneNumber": "0591234567"
+}
+
+
+###
+POST http://localhost:3000
+Content-Type: application/json
+
+{
+  "name": "Rafat",
+  "email": "mohammed@gmail.com",
+  "phoneNumber": "0569876543"
+}
+
+
+###
+POST http://localhost:3000
+Content-Type: application/json
+
+{
+  "name": "Ahmad",
+  "email": "ahmad@gmail.com",
+  "phoneNumber": "0591234567"
+}
+
+
+###
+POST http://localhost:3000
+Content-Type: application/json
+
+{
+  "name": "Yousef",
+  "email": "yousef@gmail.com"
+}
+
+
+###
+POST http://localhost:3000
+Content-Type: application/json
+
+{
+  "name": "Mohammed123",
+  "email": "mohammed123@gmail.com",
+  "phoneNumber": "0569876543"
+}
+
+
+###
+POST http://localhost:3000
+Content-Type: application/json
+
+{
+  "name": "Rafat",
+  "email": "rafat-email",
+  "phoneNumber": "0599876543"
+}
+
+
+###
+POST http://localhost:3000
+Content-Type: application/json
+
+{
+  "name": "Ahmad",
+  "email": "ahmad@gmail.com",
+  "phoneNumber": "05912345"
+}
+
+
+###
+POST http://localhost:3000
+Content-Type: application/json
+
+{
+  "name": "Khaled",
+  "email": "khaled@gmail.com",
+  "phoneNumber": "0501234567"
+}
+
+
+###
+POST http://localhost:3000
+Content-Type: application/json
+
+{
+  "name": "Mohammed",
+  "email": "mohammed@gmail.com",
+  "phoneNumber": 
+}

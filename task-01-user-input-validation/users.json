@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "id": 1,
+    "name": "Mohammed",
+    "email": "mohammed@gmail.com",
+    "phoneNumber": "0591234567",
+    "createdAt": "2026-07-19T17:56:55.205Z"
+  }
+]
