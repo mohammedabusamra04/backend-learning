@@ -1,0 +1,175 @@
+### file upload requests
+POST http://localhost:3000/upload
+Content-Type: application/json
+
+{
+  "fileName": "note.txt",
+  "contentType": "text/plain",
+  "data": "SGVsbG8gV29ybGQ="
+}
+
+###
+POST http://localhost:3000/upload
+Content-Type: application/json
+
+{
+  "fileName": "image.png",
+  "contentType": "image/png",
+  "data": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg=="
+}
+
+###
+POST http://localhost:3000/upload
+Content-Type: application/json
+
+{
+  "fileName": "photo.jpg",
+  "contentType": "image/jpeg",
+  "data": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAP//////////////////////////////////////////////////////////////////////////////////////2wBDAf//////////////////////////////////////////////////////////////////////////////////////wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAn/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAAGcP//Z"
+}
+
+###
+POST http://localhost:3000/upload
+Content-Type: application/json
+
+{
+  "fileName": "picture.jpeg",
+  "contentType": "image/jpeg",
+  "data": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAP//////////////////////////////////////////////////////////////////////////////////////2wBDAf//////////////////////////////////////////////////////////////////////////////////////wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAn/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAAGcP//Z"
+}
+
+###
+POST http://localhost:3000/upload
+Content-Type: application/json
+
+{
+  "fileName": "document.pdf",
+  "contentType": "application/pdf",
+  "data": "JVBERi0xLjQKJeLjz9MKMSAwIG9iago8PAovVHlwZSAvQ2F0YWxvZwovUGFnZXMgMiAwIFIKPj4KZW5kb2JqCjIgMCBvYmoKPDwKL1R5cGUgL1BhZ2VzCi9LaWRzIFszIDAgUl0KL0NvdW50IDEKPD4KZW5kb2JqCjMgMCBvYmoKPDwKL1R5cGUgL1BhZ2UKL1BhcmVudCAyIDAgUgovTWVkaWFCb3ggWzAgMCAzIDNdCj4+CmVuZG9iagp4cmVmCjAgNAowMDAwMDAwMDAwIDY1NTM1IGYgCjAwMDAwMDAwMTUgMDAwMDAgbiAKMDAwMDAwMDA2NCAwMDAwMCBuIAowMDAwMDAwMTIxIDAwMDAwIG4gCnRyYWlsZXIKPDwKL1NpemUgNAovUm9vdCAxIDAgUgo+PgpzdGFydHhyZWYKMTc4CiUlRU9G"
+}
+
+###
+POST http://localhost:3000/upload
+Content-Type: application/json
+
+{
+  "fileName": "script.exe",
+  "contentType": "application/octet-stream",
+  "data": "TVqQAAMAAAAEAAAA//8AALgAAAAA"
+}
+
+###
+POST http://localhost:3000/upload
+Content-Type: application/json
+
+{
+  "fileName": "app.js",
+  "contentType": "application/javascript",
+  "data": "Y29uc29sZS5sb2coImhpIik="
+}
+
+###
+POST http://localhost:3000/upload
+Content-Type: application/json
+
+{
+  "fileName": "report.docx",
+  "contentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+  "data": "UEsDBBQAAAAI"
+}
+
+###
+POST http://localhost:3000/upload
+Content-Type: application/json
+
+{
+  "fileName": "note.txt",
+  "contentType": "text/plain",
+  "data": ""
+}
+
+###
+POST http://localhost:3000/upload
+Content-Type: application/json
+
+{
+  "fileName": "",
+  "contentType": "text/plain",
+  "data": "SGVsbG8gV29ybGQ="
+}
+
+###
+POST http://localhost:3000/upload
+Content-Type: application/json
+
+{
+  "fileName": "note.txt",
+  "contentType": "",
+  "data": "SGVsbG8gV29ybGQ="
+}
+
+###
+POST http://localhost:3000/upload
+Content-Type: application/json
+
+{
+  "contentType": "text/plain",
+  "data": "SGVsbG8gV29ybGQ="
+}
+
+###
+POST http://localhost:3000/upload
+Content-Type: application/json
+
+{
+  "fileName": "note.txt",
+  "data": "SGVsbG8gV29ybGQ="
+}
+
+###
+POST http://localhost:3000/upload
+Content-Type: application/json
+
+{
+  "fileName": "note.txt",
+  "contentType": "text/plain"
+}
+
+###
+POST http://localhost:3000/upload
+Content-Type: application/json
+
+{
+  "fileName": "note.txt",
+  "contentType": "text/plain",
+  "data": "SGVsbG8gV29ybGQ=",
+  "owner": "Loai"
+}
+
+###
+POST http://localhost:3000/upload
+Content-Type: application/json
+
+{
+  "fileName": "note.txt",
+  "contentType": "text/plain",
+  "data": "SGVsbG8gV29ybGQ=",
+  "owner": "Loai",
+  "size": 100
+}
+
+###
+POST http://localhost:3000/upload
+Content-Type: application/json
+
+{}
+
+###
+POST http://localhost:3000/upload
+Content-Type: application/json
+
+{
+  "fileName": "note.txt",
+  "contentType": "text/plain",
+  "data": 
+}
