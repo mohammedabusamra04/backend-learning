@@ -1,8 +1,14 @@
 const { createServer } = require('http');
 const fs = require("fs");
 const validateUserInput = require("./validation");
+const handleUpload = require("./upload");
 
 const server = createServer((req, res) => {
+
+    if (req.method === "POST" && req.url === "/upload") {
+        handleUpload(req, res);
+        return;
+    }
 
     if (req.method === "POST") {
 
@@ -34,18 +40,14 @@ const server = createServer((req, res) => {
                     ...userData,
                     createdAt: new Date().toISOString()
                 };
-                
                 users.push(newUser);
-                
                 fs.writeFileSync(
                     "users.json",
                     JSON.stringify(users, null, 2)
                 );
-                
                 res.writeHead(201, {
                     "Content-Type": "application/json"
                 });
-                
                 res.end(JSON.stringify({
                     message: "User created successfully",
                     user: newUser
