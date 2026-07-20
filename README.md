@@ -1,20 +1,19 @@
-# User Input Validation
+# File Upload
 
-A simple Node.js task that validates user input, prevents duplicate email and phone number, and stores valid users in a local JSON file.
+A simple Node.js task that receives a file as Base64 data inside a JSON body, converts it to a Buffer, validates the file type, and stores the file on the local disk.
 
-## User Fields
+## Request Fields
 
-- id
-- name
-- email
-- phoneNumber
-- createdAt
+- fileName
+- contentType
+- data
 
 ## Validation Rules
 
 - All fields are required.
-- Email must be unique.
-- Phone number must be unique.
+- Only these file types are allowed: `txt`, `png`, `jpg`, `jpeg`, `pdf`.
+- Any other file type is rejected.
+- Extra or missing fields are rejected.
 
 ## Examples
 
@@ -24,9 +23,9 @@ A simple Node.js task that validates user input, prevents duplicate email and ph
 
 ```json
 {
-  "name": "Mohammed",
-  "email": "mohammed@example.com",
-  "phoneNumber": "0591234567"
+  "fileName": "note.txt",
+  "contentType": "text/plain",
+  "data": "SGVsbG8gV29ybGQ="
 }
 ```
 
@@ -34,28 +33,26 @@ A simple Node.js task that validates user input, prevents duplicate email and ph
 
 ```json
 {
-  "message": "User created successfully.",
-  "user": {
-    "id": "1",
-    "name": "Mohammed",
-    "email": "mohammed@example.com",
-    "phoneNumber": "0591234567",
-    "createdAt": "2026-07-19T12:00:00.000Z"
+  "message": "File uploaded successfully.",
+  "file": {
+    "fileName": "note.txt",
+    "contentType": "text/plain",
+    "size": 11
   }
 }
 ```
 
 ---
 
-### Duplicate Email
+### Invalid File Type
 
 **Input**
 
 ```json
 {
-  "name": "Rafat",
-  "email": "mohammed@example.com",
-  "phoneNumber": "0569876543"
+  "fileName": "script.exe",
+  "contentType": "application/octet-stream",
+  "data": "TVqQAAMAAAAEAAAA//8AALgAAAAA"
 }
 ```
 
@@ -63,29 +60,7 @@ A simple Node.js task that validates user input, prevents duplicate email and ph
 
 ```json
 {
-  "message": "Email already exists."
-}
-```
-
----
-
-### Duplicate Phone Number
-
-**Input**
-
-```json
-{
-  "name": "Ahmad",
-  "email": "ahmad@example.com",
-  "phoneNumber": "0591234567"
-}
-```
-
-**Response**
-
-```json
-{
-  "message": "Phone number already exists."
+  "message": "File type not allowed."
 }
 ```
 
@@ -97,9 +72,9 @@ A simple Node.js task that validates user input, prevents duplicate email and ph
 
 ```json
 {
-  "name": "Yousef",
-  "email": "",
-  "phoneNumber": "0564567890"
+  "fileName": "note.txt",
+  "contentType": "text/plain",
+  "data": ""
 }
 ```
 
@@ -119,8 +94,8 @@ A simple Node.js task that validates user input, prevents duplicate email and ph
 
 ```json
 {
-  "name": "Yousef",
-  "email": "yousef@gmail.com"
+  "fileName": "note.txt",
+  "data": "SGVsbG8gV29ybGQ="
 }
 ```
 
@@ -128,10 +103,10 @@ A simple Node.js task that validates user input, prevents duplicate email and ph
 
 ```json
 {
-  "name": "Sara",
-  "email": "sara@gmail.com",
-  "phoneNumber": "0591112233",
-  "age": 25
+  "fileName": "note.txt",
+  "contentType": "text/plain",
+  "data": "SGVsbG8gV29ybGQ=",
+  "owner": "Loai"
 }
 ```
 
@@ -148,3 +123,4 @@ A simple Node.js task that validates user input, prevents duplicate email and ph
 - Node.js
 - HTTP Module
 - File System (`fs`)
+- Buffer
