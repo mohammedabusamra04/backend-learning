@@ -46,6 +46,18 @@ POST http://localhost:3000
 Content-Type: application/json
 
 {
+  "name": "Sara",
+  "email": "sara@gmail.com",
+  "phoneNumber": "0591112233",
+  "age": 25
+}
+
+
+###
+POST http://localhost:3000
+Content-Type: application/json
+
+{
   "name": "Mohammed123",
   "email": "mohammed123@gmail.com",
   "phoneNumber": "0569876543"

@@ -44,7 +44,21 @@ const validatePhoneNumber = (phoneNumber) => {
     };
 };
 
+const fields = ["name", "email", "phoneNumber"];
+
 const validateUserInput = (user, users) => {
+    const keys = Object.keys(user);
+
+    const missing = fields.some(field => !keys.includes(field));
+    const extra = keys.some(key => !fields.includes(key));
+
+    if (missing || extra) {
+        return {
+            success: false,
+            error: "Extra or missing fields"
+        };
+    }
+
     const { name, email, phoneNumber } = user;
 
     if (!name || !email || !phoneNumber) {
