@@ -111,6 +111,38 @@ A simple Node.js task that validates user input, prevents duplicate email and ph
 }
 ```
 
+---
+
+### Missing or Extra Key
+
+**Input (missing key)**
+
+```json
+{
+  "name": "Yousef",
+  "email": "yousef@gmail.com"
+}
+```
+
+**Input (extra key)**
+
+```json
+{
+  "name": "Sara",
+  "email": "sara@gmail.com",
+  "phoneNumber": "0591112233",
+  "age": 25
+}
+```
+
+**Response**
+
+```json
+{
+  "message": "Extra or missing fields"
+}
+```
+
 ## Technologies
 
 - Node.js
