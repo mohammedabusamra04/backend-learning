@@ -1,0 +1,25 @@
+{
+  "name": "backend-learning",
+  "version": "1.0.0",
+  "description": "A simple Node.js task that receives a file as Base64 data inside a JSON body, converts it to a Buffer, validates the file type, and stores the file on the local disk.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohammedabusamra04/backend-learning.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/mohammedabusamra04/backend-learning/issues"
+  },
+  "homepage": "https://github.com/mohammedabusamra04/backend-learning#readme",
+  "dependencies": {
+    "busboy": "^1.6.0"
+  }
+}
