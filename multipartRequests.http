@@ -1,0 +1,118 @@
+### 1. تسجيل ناجح مع رفع ملف نصي (Success Case)
+POST http://localhost:3000/register
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="name"
+
+Khaled
+--WebAppBoundary
+Content-Disposition: form-data; name="email"
+
+khaled@gmail.com
+--WebAppBoundary
+Content-Disposition: form-data; name="phoneNumber"
+
+0569876543
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="hello.txt"
+Content-Type: text/plain
+
+مرحباً، هذا الملف النصي تم رفعه كجزء من عملية التسجيل بنجاح.
+--WebAppBoundary--
+
+
+### 2. تسجيل ناجح مع رفع صورة (Success Case)
+POST http://localhost:3000/register
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="name"
+
+Osama
+--WebAppBoundary
+Content-Disposition: form-data; name="email"
+
+osama@gmail.com
+--WebAppBoundary
+Content-Disposition: form-data; name="phoneNumber"
+
+0591112233
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="avatar.png"
+Content-Type: image/png
+
+iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==
+--WebAppBoundary--
+
+
+### 3. فشل التسجيل: بريد إلكتروني مكرر (Fail: Duplicate Email)
+POST http://localhost:3000/register
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="name"
+
+KhaledTwo
+--WebAppBoundary
+Content-Disposition: form-data; name="email"
+
+khaled@gmail.com
+--WebAppBoundary
+Content-Disposition: form-data; name="phoneNumber"
+
+0592223344
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="doc.pdf"
+Content-Type: application/pdf
+
+%PDF-1.4 ... test pdf data
+--WebAppBoundary--
+
+
+### 4. فشل التسجيل: رقم هاتف غير صحيح (Fail: Invalid Phone)
+POST http://localhost:3000/register
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="name"
+
+Muneer
+--WebAppBoundary
+Content-Disposition: form-data; name="email"
+
+muneer@gmail.com
+--WebAppBoundary
+Content-Disposition: form-data; name="phoneNumber"
+
+0777777777
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="notes.txt"
+Content-Type: text/plain
+
+بيانات هاتف خاطئة
+--WebAppBoundary--
+
+
+### 5. فشل الرفع: امتداد ملف غير مسموح (Fail: Invalid File Type)
+POST http://localhost:3000/register
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="name"
+
+Ramy
+--WebAppBoundary
+Content-Disposition: form-data; name="email"
+
+ramy@gmail.com
+--WebAppBoundary
+Content-Disposition: form-data; name="phoneNumber"
+
+0567778899
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="malicious.exe"
+Content-Type: application/octet-stream
+
+MZ... exe binary simulation
+--WebAppBoundary--
